@@ -1,26 +1,25 @@
 package model;
 
-public class FichaMedica{
-    private String vacinas;
-    private String alergias;
-    private Veterinario veterinario;
+import java.util.ArrayList;
+import java.util.List;
 
-    public FichaMedica(String vacinas, String alergias, Veterinario veterinario) {
-        this.vacinas = vacinas;
-        this.alergias = alergias;
-        this.veterinario = veterinario;
+public class FichaMedica {
+    private List<String> vacinas;
+    private String observacoes;
+
+    public FichaMedica() {
+        this.vacinas = new ArrayList<>(); // Começa com uma lista vazia
+        this.observacoes = "Nenhuma observação inicial.";
     }
 
-    public String getVacinas() {
-        return vacinas;
+    public void adicionarVacina(String vacina) {
+        this.vacinas.add(vacina);
     }
 
-    public String getAlergias() {
-        return alergias;
+    public void setObservacoes(String observacoes) {
+        this.observacoes = observacoes;
     }
-
-    public Veterinario getVeterinario() {
-        return veterinario;
+    public String getFicha() {
+        return "Vacinas: " + vacinas.toString() + " | Obs: " + observacoes;
     }
-
 }

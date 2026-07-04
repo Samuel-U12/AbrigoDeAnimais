@@ -19,19 +19,52 @@ public class Controller {
         animaisMap.put(gato.getId(), gato);
     }
 
+    public void adicionarVacinaAnimal(int idAnimal, String nomeVacina) {
+        Animal animal = animaisMap.get(idAnimal);
+
+        if (animal != null) {
+            animal.getFichaMedica().adicionarVacina(nomeVacina);
+            System.out.println("Vacina " + nomeVacina + " registrada no animal " + animal.getNome());
+        } else {
+            System.out.println("Animal não encontrado!");
+        }
+    }
+
     public void cadastrarVeterinario(String nome, int idade, String telefone, String CPF, double salario, double beneficios, String crm) {
         Funcionario v = new Veterinario(nome, idade, telefone, CPF, salario, beneficios, crm);
         funcionarioMap.put(v.getCPF(), v);
     }
 
-    public void cadastrarCuidador(String nome, int idade, String telefone, String CPF, double salario, double beneficios) {
-        Funcionario c = new Cuidador(nome, idade, telefone, CPF, salario, beneficios);
+    public void cadastrarCuidador(String nome, int idade, String telefone, String CPF, double salario, double beneficios, String setorResponsavel, String turno) {
+        Funcionario c = new Cuidador(nome, idade, telefone, CPF, salario, beneficios, setorResponsavel, turno);
         funcionarioMap.put(c.getCPF(), c);
     }
 
     public void cadastrarAdotante(String nome, int idade, String telefone, String CPF, String endereco) {
         Adotante adotante = new Adotante(nome, idade, telefone, CPF, endereco);
         adotanteMap.put(adotante.getCPF(), adotante);
+    }
+
+    public void adotarAnimal(String cpfAdotante, int idAnimal){
+        Animal animal = animaisMap.get(idAnimal);
+        Adotante adotante = adotanteMap.get(cpfAdotante);
+
+        if (animal != null && adotante != null) {
+            if (animal.getStatusAdocao().equalsIgnoreCase("disponível")) {
+                animal.adotar();
+                adotante.adicionarAnimalAdotado(animal);
+                System.out.println("Animal " + animal.getNome() + " adotado por " + adotante.getNome());
+            } else {
+                System.out.println("Animal " + animal.getNome() + " não está disponível para adoção.");
+            }
+        } else {
+            if (animal == null) {
+                System.out.println("Animal não encontrado!");
+            }
+            if (adotante == null) {
+                System.out.println("Adotante não encontrado!");
+            }
+        }
     }
 
     public void exibirFuncionarios() {
@@ -64,7 +97,34 @@ public class Controller {
     public void exibirAnimais() {
         System.out.println("Animais cadastrados:");
         for (Animal animal : animaisMap.values()) {
-            System.out.println("ID: " + animal.getId() + ", Nome: " + animal.getNome() + ", Idade: " + animal.getIdade() + ", Raça: " + animal.getraca() + ", Peso: " + animal.getPeso() + ", Status de Adoção: " + animal.getStatusAdocao() + ", Ração Diária: " + animal.calcularRacaoDiaria() + ", Custo Mensal: " + animal.calcularCustoMensal() + ", Ficha Médica: " + animal.getFichaMedica());
+            System.out.println("ID: " + animal.getId() + ", Nome: " + animal.getNome() + ", Idade: " + animal.getIdade() + ", Raça: " + animal.getraca() + ", Peso: " + animal.getPeso() + ", Status de Adoção: " + animal.getStatusAdocao() + ", Ração Diária: " + animal.calcularRacaoDiaria() + ", Custo Mensal: " + animal.calcularCustoMensal() + ", Ficha Médica: " + animal.getFichaMedica().getFicha());
+        }
+    }
+
+    public void exibirCachorros() {
+        System.out.println("Cachorros cadastrados:");
+        for (Animal animal : animaisMap.values()) {
+            if (animal instanceof Cachorro) {
+                System.out.println("ID: " + animal.getId() + ", Nome: " + animal.getNome() + ", Idade: " + animal.getIdade() + ", Raça: " + animal.getraca() + ", Peso: " + animal.getPeso() + ", Status de Adoção: " + animal.getStatusAdocao() + ", Ração Diária: " + animal.calcularRacaoDiaria() + ", Custo Mensal: " + animal.calcularCustoMensal() + ", Ficha Médica: " + animal.getFichaMedica().getFicha());
+            }
+        }
+    }
+
+    public void exibirGatos() {
+        System.out.println("Gatos cadastrados:");
+        for (Animal animal : animaisMap.values()) {
+            if (animal instanceof Gato) {
+                System.out.println("ID: " + animal.getId() + ", Nome: " + animal.getNome() + ", Idade: " + animal.getIdade() + ", Raça: " + animal.getraca() + ", Peso: " + animal.getPeso() + ", Status de Adoção: " + animal.getStatusAdocao() + ", Ração Diária: " + animal.calcularRacaoDiaria() + ", Custo Mensal: " + animal.calcularCustoMensal() + ", Ficha Médica: " + animal.getFichaMedica().getFicha());
+            }
+        }
+    }
+
+    public void exibirAnimaisDisponiveis() {
+        System.out.println("Animais disponíveis para adoção:");
+        for (Animal animal : animaisMap.values()) {
+            if (animal.getStatusAdocao().equalsIgnoreCase("disponível")) {
+                System.out.println("ID: " + animal.getId() + ", Nome: " + animal.getNome() + ", Idade: " + animal.getIdade() + ", Raça: " + animal.getraca() + ", Peso: " + animal.getPeso() + ", Ração Diária: " + animal.calcularRacaoDiaria() + ", Custo Mensal: " + animal.calcularCustoMensal() + ", Ficha Médica: " + animal.getFichaMedica().getFicha());
+            }
         }
     }
 

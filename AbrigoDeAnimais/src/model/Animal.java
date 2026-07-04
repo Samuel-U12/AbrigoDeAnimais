@@ -17,6 +17,7 @@ public abstract class Animal implements Custavel{
             this.idade = idade;
             this.raca = raca;
             this.peso = peso;
+            this.fichaMedica = new FichaMedica();
         }
 
         public int getId() {
@@ -43,16 +44,12 @@ public abstract class Animal implements Custavel{
             return this.statusAdocao;
         }
 
-        public void setStatusAdocao(String statusAdocao) {
-            if (statusAdocao.equalsIgnoreCase("disponível") || statusAdocao.equalsIgnoreCase("indisponível")) {
-                this.statusAdocao = statusAdocao;
-            } else {
-                System.out.println("Status de adoção inválido. Use 'disponível' ou 'indisponível'.");
-            }
-        }
-
         public FichaMedica getFichaMedica() {
             return this.fichaMedica;
+        }
+
+        public void adotar() {
+            this.statusAdocao = "Adotado";
         }
 
         public abstract double calcularRacaoDiaria();
