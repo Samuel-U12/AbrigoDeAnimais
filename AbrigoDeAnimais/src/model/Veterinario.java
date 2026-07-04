@@ -1,6 +1,6 @@
-package Model.Funcionarios;
+package model;
 
-public class Veterinario extends Funcionario {
+public class Veterinario extends Funcionario{
 
     private final String crm;
 
@@ -12,4 +12,10 @@ public class Veterinario extends Funcionario {
     public String getCrm() {
         return crm;
     }
+
+    @Override
+    public double calcularCustoMensal() {
+        return getSalario() + getBeneficios();
+    }
+
 }

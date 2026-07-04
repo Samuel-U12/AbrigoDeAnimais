@@ -1,9 +1,7 @@
-package Model.Funcionarios;
-
-import Model.Pessoa;
+package model;
 
 /*Herança cascata*/
-public abstract class Funcionario extends Pessoa {
+public abstract class Funcionario extends Pessoa implements Custavel{
 
     private double salario;
     private double beneficios;
@@ -20,6 +18,6 @@ public abstract class Funcionario extends Pessoa {
     public double getBeneficios() {
         return beneficios;
     }
-
-
+    @Override
+    public abstract double calcularCustoMensal();
 }

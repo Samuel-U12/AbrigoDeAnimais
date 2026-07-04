@@ -1,8 +1,6 @@
-package Model.Animais;
+package model;
 
-import Model.Custavel;
-
-public class Cachorro extends Animal implements Custavel {
+public class Cachorro extends Animal{
     private double precoKgRacao;
     private double gastosVeterinarios;
     private String porte;
@@ -12,13 +10,13 @@ public class Cachorro extends Animal implements Custavel {
         this.gastosVeterinarios = gastosVeterinarios;
         this.precoKgRacao = precoKgRacao;
 
-        if(getPeso() < 5.0) {
+        if(peso < 5.0) {
             this.porte = "Mini";
-        } else if(getPeso() < 10.0) {
+        } else if(peso < 10.0) {
             this.porte = "Pequeno";
-        } else if (getPeso() < 25.0) {
+        } else if (peso < 25.0) {
             this.porte = "Médio";
-        } else if (getPeso() < 45.0) {
+        } else if (peso < 45.0) {
             this.porte = "Grande";
         }
         else {
@@ -38,8 +36,8 @@ public class Cachorro extends Animal implements Custavel {
         return precoKgRacao;
     }
 
-    public double porcentagemRacaoDiaria(String porte) {
-        return switch (porte) {
+    public double porcentagemRacaoDiaria() {
+        return switch (getPorte()) {
             case "Mini" -> 0.04;
             case "Pequeno" -> 0.03;
             case "Médio" -> 0.02;
@@ -48,17 +46,15 @@ public class Cachorro extends Animal implements Custavel {
             default -> 0.0;
         };
     }
-
     @Override
     public double calcularRacaoDiaria() {
-        double porcentagemRacaoDiaria = porcentagemRacaoDiaria(getPorte());
+        double porcentagemRacaoDiaria = porcentagemRacaoDiaria();
         if (porcentagemRacaoDiaria == 0.0) {
             return 0.0;
         }
         double racaoDiaria = getPeso() * porcentagemRacaoDiaria;
         return racaoDiaria;
     }
-
     @Override
     public double calcularCustoMensal() {
        double custoRacao = (calcularRacaoDiaria() * 30) * precoKgRacao;

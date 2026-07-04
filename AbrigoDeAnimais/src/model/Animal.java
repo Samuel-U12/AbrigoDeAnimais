@@ -1,6 +1,8 @@
-package Model.Animais;
+package model;
 
-public abstract class Animal {
+public abstract class Animal implements Custavel{
+        private static int contadorId = 1;
+        private int id;
         private String nome;
         private int idade;
         private String raca;
@@ -9,30 +11,36 @@ public abstract class Animal {
         private String statusAdocao = "Disponível";
 
         public Animal(String nome, int idade, String raca, double peso) {
+            this.id = contadorId;
+            contadorId++;
             this.nome = nome;
             this.idade = idade;
             this.raca = raca;
             this.peso = peso;
         }
 
+        public int getId() {
+            return this.id;
+        }
+
         public String getNome() {
-            return nome;
+            return this.nome;
         }
 
         public int getIdade() {
-            return idade;
+            return this.idade;
         }
 
         public String getraca() {
-            return raca;
+            return this.raca;
         }
 
         public double getPeso() {
-            return peso;
+            return this.peso;
         }
 
         public String getStatusAdocao() {
-            return statusAdocao;
+            return this.statusAdocao;
         }
 
         public void setStatusAdocao(String statusAdocao) {
@@ -44,8 +52,11 @@ public abstract class Animal {
         }
 
         public FichaMedica getFichaMedica() {
-            return fichaMedica;
+            return this.fichaMedica;
         }
 
         public abstract double calcularRacaoDiaria();
+
+        @Override
+        public abstract double calcularCustoMensal();
 }

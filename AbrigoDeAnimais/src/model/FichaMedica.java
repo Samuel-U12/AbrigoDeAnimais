@@ -1,6 +1,4 @@
-package Model.Animais;
-
-import Model.Funcionarios.Veterinario;
+package model;
 
 public class FichaMedica{
     private String vacinas;
