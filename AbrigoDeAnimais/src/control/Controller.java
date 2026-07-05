@@ -134,4 +134,12 @@ public class Controller {
             System.out.println("Nome: " + adotante.getNome() + ", Idade: " + adotante.getIdade() + ", Telefone: " + adotante.getTelefone() + ", CPF: " + adotante.getCPF() + ", Endereço: " + adotante.getEndereco());
         }
     }
+    public void procurarAnimaisPorId(int idAnimal) {
+        Animal animal = animaisMap.get(idAnimal);
+        if (animal != null) {
+            System.out.println("ID: " + animal.getId() + ", Nome: " + animal.getNome() + ", Idade: " + animal.getIdade() + ", Raça: " + animal.getraca() + ", Peso: " + animal.getPeso() + ", Status de Adoção: " + animal.getStatusAdocao() + ", Ração Diária: " + animal.calcularRacaoDiaria() + ", Custo Mensal: " + animal.calcularCustoMensal() + ", Ficha Médica: " + animal.getFichaMedica().getFicha());
+        } else {
+            System.out.println("Animal não encontrado!");
+        }
+    }
 }
