@@ -133,6 +133,7 @@ public class View {
                 break;
             case 9:
                 control.exibirFuncionarios();
+                break;
             case 10:
                 control.exibirFuncionariosVeterinarios();
                 break;
