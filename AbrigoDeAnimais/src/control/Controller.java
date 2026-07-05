@@ -55,7 +55,7 @@ public class Controller {
                 adotante.adicionarAnimalAdotado(animal);
                 System.out.println("Animal " + animal.getNome() + " adotado por " + adotante.getNome());
             } else {
-                System.out.println("Animal " + animal.getNome() + " não está disponível para adoção.");
+                throw new AnimalJaAdotadoException(animal.getNome());
             }
         } else {
             if (animal == null) {

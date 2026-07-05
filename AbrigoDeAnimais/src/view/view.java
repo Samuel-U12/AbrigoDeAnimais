@@ -27,106 +27,134 @@ public class View {
     public void processarOpcao(byte opcao) {
         switch (opcao) {
             case 1:
-                System.out.println("Nome:");
-                String nomeCachorro = teclado.nextLine();
-                System.out.println("Idade:");
-                int idadeCachorro = Integer.parseInt(teclado.nextLine());
-                System.out.println("Raça:");
-                String racaCachorro = teclado.nextLine();
-                System.out.println("Peso:");
-                double pesoCachorro = Double.parseDouble(teclado.nextLine());
-                System.out.println("Preço por kg de ração:");
-                double precoKgRacaoCachorro = Double.parseDouble(teclado.nextLine());
-                System.out.println("Gastos veterinários:");
-                double gastosVeterinariosCachorro = Double.parseDouble(teclado.nextLine());
-                control.cadastrarCachorro(nomeCachorro, idadeCachorro, racaCachorro, pesoCachorro, precoKgRacaoCachorro, gastosVeterinariosCachorro);
-                System.out.println("Animal cadastrado com sucesso!");
+                try {
+                    System.out.println("Nome:");
+                    String nomeCachorro = teclado.nextLine();
+                    System.out.println("Idade:");
+                    int idadeCachorro = Integer.parseInt(teclado.nextLine());
+                    System.out.println("Raça:");
+                    String racaCachorro = teclado.nextLine();
+                    System.out.println("Peso:");
+                    double pesoCachorro = Double.parseDouble(teclado.nextLine());
+                    System.out.println("Preço por kg de ração:");
+                    double precoKgRacaoCachorro = Double.parseDouble(teclado.nextLine());
+                    System.out.println("Gastos veterinários:");
+                    double gastosVeterinariosCachorro = Double.parseDouble(teclado.nextLine());
+                    control.cadastrarCachorro(nomeCachorro, idadeCachorro, racaCachorro, precoKgRacaoCachorro, gastosVeterinariosCachorro, pesoCachorro);
+                    System.out.println("Animal cadastrado com sucesso!");
+                } catch (NumberFormatException e) {
+                    System.out.println("Erro: Por favor, digite apenas números válidos sem espaços ou letras!");
+                }
                 break;
             case 2:
-                System.out.println("Nome:");
-                String nomeGato = teclado.nextLine();
-                System.out.println("Idade:");
-                int idadeGato = Integer.parseInt(teclado.nextLine());
-                System.out.println("Raça:");
-                String racaGato = teclado.nextLine();
-                System.out.println("Peso:");
-                double pesoGato = Double.parseDouble(teclado.nextLine());
-                System.out.println("Preço por kg de ração:");
-                double precoKgRacaoGato = Double.parseDouble(teclado.nextLine());
-                System.out.println("Gastos veterinários:");
-                double gastosVeterinariosGato = Double.parseDouble(teclado.nextLine());
-                control.cadastrarGato(nomeGato, idadeGato, racaGato, pesoGato, precoKgRacaoGato, gastosVeterinariosGato);
-                System.out.println("Animal cadastrado com sucesso!");
+                try {
+                    System.out.println("Nome:");
+                    String nomeGato = teclado.nextLine();
+                    System.out.println("Idade:");
+                    int idadeGato = Integer.parseInt(teclado.nextLine());
+                    System.out.println("Raça:");
+                    String racaGato = teclado.nextLine();
+                    System.out.println("Peso:");
+                    double pesoGato = Double.parseDouble(teclado.nextLine());
+                    System.out.println("Preço por kg de ração:");
+                    double precoKgRacaoGato = Double.parseDouble(teclado.nextLine());
+                    System.out.println("Gastos veterinários:");
+                    double gastosVeterinariosGato = Double.parseDouble(teclado.nextLine());
+                    control.cadastrarGato(nomeGato, idadeGato, racaGato, precoKgRacaoGato, gastosVeterinariosGato, pesoGato);
+                    System.out.println("Animal cadastrado com sucesso!");
+                } catch (NumberFormatException e) {
+                    System.out.println("Erro: Por favor, digite apenas números válidos sem espaços ou letras!");
+                }
                 break;
             case 3:
-                System.out.println("Nome:");
-                String nomeVeterinario = teclado.nextLine();
-                System.out.println("Idade:");
-                int idadeVeterinario = Integer.parseInt(teclado.nextLine());
-                System.out.println("Telefone:");
-                String telefoneVeterinario = teclado.nextLine();
-                System.out.println("CPF:");
-                String cpfVeterinario = teclado.nextLine();
-                System.out.println("Salário:");
-                double salarioVeterinario = Double.parseDouble(teclado.nextLine());
-                System.out.println("Benefícios:");
-                double beneficiosVeterinario = Double.parseDouble(teclado.nextLine());
-                System.out.println("CRM:");
-                String crmVeterinario = teclado.nextLine();
-                control.cadastrarVeterinario(nomeVeterinario, idadeVeterinario, telefoneVeterinario, cpfVeterinario, salarioVeterinario, beneficiosVeterinario, crmVeterinario);
-                System.out.println("Veterinário cadastrado com sucesso!");
+                try {
+                    System.out.println("Nome:");
+                    String nomeVeterinario = teclado.nextLine();
+                    System.out.println("Idade:");
+                    int idadeVeterinario = Integer.parseInt(teclado.nextLine());
+                    System.out.println("Telefone:");
+                    String telefoneVeterinario = teclado.nextLine();
+                    System.out.println("CPF:");
+                    String cpfVeterinario = teclado.nextLine();
+                    System.out.println("Salário:");
+                    double salarioVeterinario = Double.parseDouble(teclado.nextLine());
+                    System.out.println("Benefícios:");
+                    double beneficiosVeterinario = Double.parseDouble(teclado.nextLine());
+                    System.out.println("CRM:");
+                    String crmVeterinario = teclado.nextLine();
+                    control.cadastrarVeterinario(nomeVeterinario, idadeVeterinario, telefoneVeterinario, cpfVeterinario, salarioVeterinario, beneficiosVeterinario, crmVeterinario);
+                    System.out.println("Veterinário cadastrado com sucesso!");
+                } catch (NumberFormatException e) {
+                    System.out.println("Erro: Por favor, digite apenas números válidos sem espaços ou letras!");
+                }
                 break;
             case 4:
-                System.out.println("Nome:");
-                String nomeCuidador = teclado.nextLine();
-                System.out.println("Idade:");
-                int idadeCuidador = Integer.parseInt(teclado.nextLine());
-                System.out.println("Telefone:");
-                String telefoneCuidador = teclado.nextLine();
-                System.out.println("CPF:");
-                String cpfCuidador = teclado.nextLine();
-                System.out.println("Salário:");
-                double salarioCuidador = Double.parseDouble(teclado.nextLine());
-                System.out.println("Benefícios:");
-                double beneficiosCuidador = Double.parseDouble(teclado.nextLine());
-                System.out.println("Setor Responsável:");
-                String setorResponsavel = teclado.nextLine();
-                System.out.println("Turno:");
-                String turno = teclado.nextLine();
-                control.cadastrarCuidador(nomeCuidador, idadeCuidador, telefoneCuidador, cpfCuidador, salarioCuidador, beneficiosCuidador, setorResponsavel, turno);
-                System.out.println("Cuidador cadastrado com sucesso!");
+                try {
+                    System.out.println("Nome:");
+                    String nomeCuidador = teclado.nextLine();
+                    System.out.println("Idade:");
+                    int idadeCuidador = Integer.parseInt(teclado.nextLine());
+                    System.out.println("Telefone:");
+                    String telefoneCuidador = teclado.nextLine();
+                    System.out.println("CPF:");
+                    String cpfCuidador = teclado.nextLine();
+                    System.out.println("Salário:");
+                    double salarioCuidador = Double.parseDouble(teclado.nextLine());
+                    System.out.println("Benefícios:");
+                    double beneficiosCuidador = Double.parseDouble(teclado.nextLine());
+                    System.out.println("Setor Responsável:");
+                    String setorResponsavel = teclado.nextLine();
+                    System.out.println("Turno:");
+                    String turno = teclado.nextLine();
+                    control.cadastrarCuidador(nomeCuidador, idadeCuidador, telefoneCuidador, cpfCuidador, salarioCuidador, beneficiosCuidador, setorResponsavel, turno);
+                    System.out.println("Cuidador cadastrado com sucesso!");
+                } catch (NumberFormatException e) {
+                    System.out.println("Erro: Por favor, digite apenas números válidos sem espaços ou letras!");
+                }
                 break;
             case 5:
-                System.out.println("Nome:");
-                String nomeAdotante = teclado.nextLine();
-                System.out.println("Idade:");
-                int idadeAdotante = Integer.parseInt(teclado.nextLine());
-                System.out.println("Telefone:");
-                String telefoneAdotante = teclado.nextLine();
-                System.out.println("CPF:");
-                String cpfAdotante = teclado.nextLine();
-                System.out.println("Endereço:");
-                String enderecoAdotante = teclado.nextLine();
-                control.cadastrarAdotante(nomeAdotante, idadeAdotante, telefoneAdotante, cpfAdotante, enderecoAdotante);
-                System.out.println("Adotante cadastrado com sucesso!");
+                try {
+                    System.out.println("Nome:");
+                    String nomeAdotante = teclado.nextLine();
+                    System.out.println("Idade:");
+                    int idadeAdotante = Integer.parseInt(teclado.nextLine());
+                    System.out.println("Telefone:");
+                    String telefoneAdotante = teclado.nextLine();
+                    System.out.println("CPF:");
+                    String cpfAdotante = teclado.nextLine();
+                    System.out.println("Endereço:");
+                    String enderecoAdotante = teclado.nextLine();
+                    control.cadastrarAdotante(nomeAdotante, idadeAdotante, telefoneAdotante, cpfAdotante, enderecoAdotante);
+                    System.out.println("Adotante cadastrado com sucesso!");
+                } catch (NumberFormatException e) {
+                    System.out.println("Erro: Por favor, digite apenas números válidos sem espaços ou letras!");
+                }
                 break;
             case 6:
-                System.out.println("Digite o ID do animal:");
-                int idAnimal = Integer.parseInt(teclado.nextLine());
-                System.out.println("Digite o nome da vacina:");
-                String nomeVacina = teclado.nextLine();
+                try {
+                    System.out.println("Digite o ID do animal:");
+                    int idAnimal = Integer.parseInt(teclado.nextLine());
+                    System.out.println("Digite o nome da vacina:");
+                    String nomeVacina = teclado.nextLine();
 
-                control.adicionarVacinaAnimal(idAnimal, nomeVacina);
-                System.out.println("Vacina adicionada com sucesso!");
+                    control.adicionarVacinaAnimal(idAnimal, nomeVacina);
+                    System.out.println("Vacina adicionada com sucesso!");
+                } catch (NumberFormatException e) {
+                    System.out.println("Erro: Por favor, digite apenas números válidos sem espaços ou letras!");
+                }
                 break;
             case 7:
-                System.out.println("Digite o CPF do adotante:");
-                String cpfAdotanteAdocao = teclado.nextLine();
-                System.out.println("Digite o ID do animal:");
-                int idAnimalAdocao = Integer.parseInt(teclado.nextLine());
+                try {
+                    System.out.println("Digite o CPF do adotante:");
+                    String cpfAdotanteAdocao = teclado.nextLine();
+                    System.out.println("Digite o ID do animal:");
+                    int idAnimalAdocao = Integer.parseInt(teclado.nextLine());
 
-                control.adotarAnimal(cpfAdotanteAdocao, idAnimalAdocao);
-                System.out.println("Animal adotado com sucesso!");
+                    control.adotarAnimal(cpfAdotanteAdocao, idAnimalAdocao);
+                    System.out.println("Animal adotado com sucesso!");
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
                 break;
             case 8:
                 control.exibirAnimais();
@@ -153,9 +181,13 @@ public class View {
                 control.exibirAnimaisDisponiveis();
                 break;
             case 16:
-                System.out.println("Digite o ID do animal:");
-                int animalId = Integer.parseInt(teclado.nextLine());
-                control.procurarAnimaisPorId(animalId);
+                try {
+                    System.out.println("Digite o ID do animal:");
+                    int animalId = Integer.parseInt(teclado.nextLine());
+                    control.procurarAnimaisPorId(animalId);
+                } catch (NumberFormatException e) {
+                    System.out.println("Erro: Por favor, digite apenas números válidos sem espaços ou letras!");
+                }
                 break;
             case 0:
                 System.out.println("Saindo do sistema...");
