@@ -58,3 +58,66 @@ Este diagrama de classes foca especificamente na relação entre as classes Adot
 
 Este diagrama de classes foca na estrutura de herança da classe Funcionario, mostrando que as classes Cuidador e Veterinario estendem Funcionario, herdando seus atributos e métodos, e implementando seus próprios métodos específicos de cálculo de custo mensal.
 
+## 5. Manual de Usuário
+
+Esse e o manual do usuario
+
+### 5.1. Navegação geral e interface
+
+Ao iniciar o sistema, você verá uma mensagem de boas-vindas. O sistema utiliza um fluxo de navegação baseado em "Enter para continuar". Toda vez que uma operação for concluída ou o menu for recarregado, o sistema aguardará que você pressione a tecla Enter para garantir que você consiga ler os dados na tela antes que o console exiba novas informações.
+O menu principal é numérico (de 0 a 16):
+Bem-vindo ao sistema do abrigo de animais!
+Pressione enter para continuar. 
+
+Menu:
+1. Cadastrar Cachorro        2. Cadastrar Gato
+3. Cadastrar Veterinário     4. Cadastrar Cuidador
+5. Cadastrar Adotante        6. Adicionar vacina a um animal
+7. Adotar animal             8. Listar animais
+9. Listar funcionários       10. Listar Veterinários
+11. Listar Cuidadores        12. Listar Adotantes
+13. Listar Cachorros         14. Listar Gatos
+15. Listar Animais Disponíveis para Adoção
+16. Procurar animal por ID
+0. Sair
+
+Escolha uma opção:
+
+### 3.3. Instruções de Uso das Funcionalidades
+
+#### A. Fluxo de Cadastros (Opções 1 a 5)
+Para cadastrar qualquer entidade (Animais, Funcionários ou Adotantes), digite o número correspondente à opção e preencha as perguntas solicitadas no terminal.
+
+ID Automático: Você não precisa digitar o ID para cachorros e gatos. O sistema gera automaticamente um identificador numérico sequencial (Ex: ID: 1, ID: 2...) assim que o cadastro é finalizado.
+
+Campos Específicos: Ao cadastrar um Cuidador (Opção 4), o sistema solicitará o Setor Responsável (ex: Gatil, Canil) e o Turno (ex: Manhã, Noite). Ao cadastrar um Veterinário (Opção 3), será solicitado o número do CRM.
+
+#### B. Registro de Vacinação (Opção 6)
+Para adicionar uma vacina ao histórico clínico de um animal:
+Escolha a Opção 6.
+Digite o ID numérico do animal (use a opção 8 ou 15 previamente para consultar o ID).
+Digite o nome da vacina (Ex: Antirrábica, V10).
+O sistema buscará o animal no banco de dados simulado e anexará a vacina à sua FichaMedica.
+
+#### C. Processo de Adoção (Opção 7)
+Esta funcionalidade realiza o vínculo definitivo de um animal a um adotante:
+Escolha a Opção 7.
+Digite o CPF exato do Adotante (ele deve ter sido cadastrado previamente na opção 5).
+Digite o ID do animal desejado.
+O sistema irá validar se o adotante e o animal existem, e se o animal está livre. Caso positivo, o status do animal mudará instantaneamente de Disponível para Adotado na lista geral.
+
+#### D. Consultas e Listagens (Opções 8 a 16)
+O sistema possui filtros avançados de exibição:
+Opção 8, 13 e 14: Listam todos os animais, apenas cachorros ou apenas gatos, exibindo dados completos, o consumo de ração diária calculado por peso e o resumo da ficha médica.
+Opção 15: Lista apenas os animais que ainda não foram adotados. Útil para o processo de triagem com novos adotantes.
+Opção 16: Permite buscar um animal específico digitando apenas o seu ID, sem a necessidade de rolar por toda a lista do abrigo.
+Opção 9, 10 e 11: Exibem listas de recursos humanos, calculando de forma transparente os salários, benefícios e o Custo Mensal que cada funcionário gera para a instituição.
+
+### 3.4. Resolução de Problemas e Tratamento de Erros (Exceções)
+O sistema conta com um mecanismo de segurança interna (Tratamento de Exceções) que impede que o programa feche sozinho caso o usuário digite algo incorreto.
+
+Erro de Digitação (Letras em campos de Números): Se o sistema solicitar um valor numérico (como Idade, Peso, Salário ou ID) e você acidentalmente digitar letras (ex: "cinco") ou deixar em branco, o sistema capturará uma NumberFormatException. O programa exibirá um alerta amigável: Erro: Por favor, digite apenas números válidos! e retornará em segurança para o menu principal, sem perder os dados anteriores.
+
+Tentativa de CPF Duplicado: O sistema gerencia adotantes e funcionários por chaves exclusivas. Se você tentar cadastrar duas pessoas com o mesmo CPF, a Controller disparará uma exceção de negócio, bloqueando a operação e informando que a chave já existe.
+
+Animal inexistente ou já Adotado: Se você tentar vacinar ou adotar informando um ID inválido ou de um bicho que já foi adotado, o sistema acusará o erro na tela de forma limpa, protegendo a integridade das informações do abrigo.
