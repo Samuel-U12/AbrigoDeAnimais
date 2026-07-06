@@ -58,6 +58,10 @@ Este diagrama de classes foca especificamente na relação entre as classes Adot
 
 Este diagrama de classes foca na estrutura de herança da classe Funcionario, mostrando que as classes Cuidador e Veterinario estendem Funcionario, herdando seus atributos e métodos, e implementando seus próprios métodos específicos de cálculo de custo mensal.
 
+![diagrama de estado](imgs/diagrama9.jpeg)
+
+O diagrama ilustra o fluxo de processamento de um animal num abrigo, desde a sua entrada até o seu destino final. O processo inicia-se com o animal num ponto de partida, passando primeiro por uma Triagem Médica. Em seguida, o animal é colocado Em Tratamento. Após o tratamento, há um ponto de decisão: Houve Melhora?. Se a resposta for SIM, o animal segue para o estado Disponível para Adoção e, eventualmente, é Adotado, alcançando um ponto de término do processo. Se a resposta for NÃO, o animal segue para o estado Óbito, também alcançando um ponto de término do processo. O diagrama mostra, assim, os dois caminhos principais e possíveis finais para um animal neste fluxo específico: adoção bem-sucedida ou morte.
+
 ## 5. Manual de Usuário
 
 Esse e o manual do usuario
