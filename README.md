@@ -1,6 +1,10 @@
 # AbrigoDeAnimais
 
-### Intergrantes: Samuel Almeida de Lima, Fernando José Amurim Freitas, Mayane Cristina Lima Queiroz, Rhegys Patryck Oliveira Torres.
+### Intergrantes: 
+- Samuel Almeida de Lima
+- Fernando José Amurim Freitas
+- Mayane Cristina Lima Queiroz
+- Rhegys Patryck Oliveira Torres
 
 ## 1. Descrição Geral do Problema e da Solução
 
