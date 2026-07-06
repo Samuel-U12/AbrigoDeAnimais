@@ -22,6 +22,39 @@ Os requisitos funcionais descrevem as ações e comportamentos que o sistema dev
 * **RF04 - Emitir Relatórios e Consultas:** O sistema deve ser capaz de listar de forma filtrada todos os animais do abrigo, animais especificamente disponíveis, tipos de funcionários (veterinários ou cuidadores), adotantes, e permitir a busca individualizada de um animal por meio do seu ID único.
 * **RF05 - Gerar Relatório Financeiro (Custo Mensal):** O sistema deve calcular de forma automatizada e polimórfica o custo mensal total do abrigo, somando os salários e benefícios dos funcionários com os custos individuais de alimentação (quilos de ração consumidos) e despesas veterinárias de cada animal resgatado.
 
-## 3. Diagrama de caso de uso
+## 3. Diagramas de Caso de Uso
 
-![Diagrama de caso de uso] (imgs/diagrama1.jpeg)
+![Diagrama de caso de uso](imgs/diagrama1.jpeg)
+
+Este diagrama ilustra os diferentes estados que um objeto "Animal" pode assumir no sistema, como "Cadastrado", "Disponível" para adoção e "Adotado", detalhando as transições acionadas por eventos como "Cadastrar animal", "AdicionarVacina" e "adotarAnimal".
+
+![Diagrama de caso de uso](imgs/diagrama2.jpeg)
+
+Este diagrama apresenta as interações dos usuários do sistema com as funções de gerenciamento de pessoal e financeiro, incluindo o cadastro de funcionários especializados (Veterinário, Cuidador) e os cálculos de custo mensal, custo de animal e custo do abrigo.
+
+![Diagrama de caso de uso](imgs/diagrama3.jpeg)
+
+Este diagrama descreve como os usuários (especialmente Veterinários e Funcionários) interagem com o sistema para gerenciar as fichas médicas dos animais, realizando ações como adicionar vacinas, consultar fichas, atualizar observações e registrar gastos veterinários.
+
+![Diagrama de Caso de Uso](imgs/diagrama4.jpeg)
+
+Este diagrama mostra as interações gerais focadas nos animais, permitindo que os usuários realizem o cadastro de cachorros e gatos, gerenciem esses cadastros, procurem animais por ID e adicionem vacinas.
+
+![Diagrama de caso de uso](imgs/diagrama5.jpeg)
+
+Este diagrama detalha o fluxo e as interações para o processo de adoção, incluindo o cadastro de adotantes, a listagem de animais disponíveis e a execução da adoção em si, com verificação de disponibilidade e tratamento de exceções.
+
+## 4. Diagramas de classes
+
+![Diagrama de classes](imgs/diagrama6.jpeg)
+
+Este é o diagrama de classes completo do sistema, apresentando a arquitetura geral organizada em pacotes (View, Control, Model), mostrando todas as classes principais (Main, View, Controller, Pessoa, Adotante, Funcionario, Veterinario, Cuidador, Animal, Cachorro, Gato, Ficha Medica) e suas relações (herança, associação, agregação, composição, implementação de interface).
+
+![Diagrama de classes](imgs/diagrama7.jpeg)
+
+Este diagrama de classes foca especificamente na relação entre as classes Adotante e Animal, mostrando uma associação onde um adotante pode ser responsável por múltiplos animais e um animal pode ter um adotante responsável
+
+![Diagrama de classes](imgs/diagrama8.jpeg)
+
+Este diagrama de classes foca na estrutura de herança da classe Funcionario, mostrando que as classes Cuidador e Veterinario estendem Funcionario, herdando seus atributos e métodos, e implementando seus próprios métodos específicos de cálculo de custo mensal.
+
