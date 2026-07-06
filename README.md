@@ -58,15 +58,15 @@ Este diagrama de classes foca especificamente na relação entre as classes Adot
 
 Este diagrama de classes foca na estrutura de herança da classe Funcionario, mostrando que as classes Cuidador e Veterinario estendem Funcionario, herdando seus atributos e métodos, e implementando seus próprios métodos específicos de cálculo de custo mensal.
 
+## 5. Diagrama de Estado
+
 ![diagrama de estado](imgs/diagrama9.jpeg)
 
 O diagrama ilustra o fluxo de processamento de um animal num abrigo, desde a sua entrada até o seu destino final. O processo inicia-se com o animal num ponto de partida, passando primeiro por uma Triagem Médica. Em seguida, o animal é colocado Em Tratamento. Após o tratamento, há um ponto de decisão: Houve Melhora?. Se a resposta for SIM, o animal segue para o estado Disponível para Adoção e, eventualmente, é Adotado, alcançando um ponto de término do processo. Se a resposta for NÃO, o animal segue para o estado Óbito, também alcançando um ponto de término do processo. O diagrama mostra, assim, os dois caminhos principais e possíveis finais para um animal neste fluxo específico: adoção bem-sucedida ou morte.
 
-## 5. Manual de Usuário
+## 6. Manual de Usuário
 
-Esse e o manual do usuario
-
-### 5.1. Navegação geral e interface
+### 6.1. Navegação geral e interface
 
 Ao iniciar o sistema, você verá uma mensagem de boas-vindas. O sistema utiliza um fluxo de navegação baseado em "Enter para continuar". Toda vez que uma operação for concluída ou o menu for recarregado, o sistema aguardará que você pressione a tecla Enter para garantir que você consiga ler os dados na tela antes que o console exiba novas informações.
 O menu principal é numérico (de 0 a 16):
@@ -94,7 +94,7 @@ Menu:
 
 Escolha uma opção:
 
-### 3.3. Instruções de Uso das Funcionalidades
+### 6.2. Instruções de Uso das Funcionalidades
 
 #### A. Fluxo de Cadastros (Opções 1 a 5)
 Para cadastrar qualquer entidade (Animais, Funcionários ou Adotantes), digite o número correspondente à opção e preencha as perguntas solicitadas no terminal.
