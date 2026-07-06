@@ -108,10 +108,14 @@ O sistema irá validar se o adotante e o animal existem, e se o animal está liv
 
 #### D. Consultas e Listagens (Opções 8 a 16)
 O sistema possui filtros avançados de exibição:
+
 Opção 8, 13 e 14: Listam todos os animais, apenas cachorros ou apenas gatos, exibindo dados completos, o consumo de ração diária calculado por peso e o resumo da ficha médica.
+
 Opção 15: Lista apenas os animais que ainda não foram adotados. Útil para o processo de triagem com novos adotantes.
+
 Opção 16: Permite buscar um animal específico digitando apenas o seu ID, sem a necessidade de rolar por toda a lista do abrigo.
-Opção 9, 10 e 11: Exibem listas de recursos humanos, calculando de forma transparente os salários, benefícios e o Custo Mensal que cada funcionário gera para a instituição.
+
+Opção 9, 10 e 11: Exibem listas de funcionarios, calculando de forma transparente os salários, benefícios e o Custo Mensal que cada funcionário gera para a instituição.
 
 ### 3.4. Resolução de Problemas e Tratamento de Erros (Exceções)
 O sistema conta com um mecanismo de segurança interna (Tratamento de Exceções) que impede que o programa feche sozinho caso o usuário digite algo incorreto.
