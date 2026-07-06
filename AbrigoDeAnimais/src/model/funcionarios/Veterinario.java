@@ -1,4 +1,4 @@
-package model;
+package model.funcionarios;
 
 public class Veterinario extends Funcionario{
 

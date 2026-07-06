@@ -1,6 +1,7 @@
 package model;
 
 import java.util.List;
+import model.animal.Animal;
 
 public class Adotante extends Pessoa {
     private String endereco;

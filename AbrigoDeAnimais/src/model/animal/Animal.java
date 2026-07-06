@@ -1,4 +1,6 @@
-package model;
+package model.animal;
+
+import model.Custavel;
 
 public abstract class Animal implements Custavel{
         private static int contadorId = 1;

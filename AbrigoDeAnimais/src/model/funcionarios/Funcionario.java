@@ -1,4 +1,7 @@
-package model;
+package model.funcionarios;
+
+import model.Custavel;
+import model.Pessoa;
 
 /*Herança cascata*/
 public abstract class Funcionario extends Pessoa implements Custavel{

@@ -2,6 +2,7 @@ package view;
 
 import control.Controller;
 import java.util.Scanner;
+import model.exception.CPFJaCadastradaException;
 
 public class View {
     private final Controller control;
@@ -84,7 +85,10 @@ public class View {
                     String crmVeterinario = teclado.nextLine();
                     control.cadastrarVeterinario(nomeVeterinario, idadeVeterinario, telefoneVeterinario, cpfVeterinario, salarioVeterinario, beneficiosVeterinario, crmVeterinario);
                     System.out.println("Veterinário cadastrado com sucesso!");
-                } catch (NumberFormatException e) {
+                } catch (CPFJaCadastradaException e) {
+                    System.out.println(e.getMessage());
+                }
+                catch (NumberFormatException e) {
                     System.out.println("Erro: Por favor, digite apenas números válidos sem espaços ou letras!");
                 }
                 break;
@@ -108,6 +112,8 @@ public class View {
                     String turno = teclado.nextLine();
                     control.cadastrarCuidador(nomeCuidador, idadeCuidador, telefoneCuidador, cpfCuidador, salarioCuidador, beneficiosCuidador, setorResponsavel, turno);
                     System.out.println("Cuidador cadastrado com sucesso!");
+                } catch (CPFJaCadastradaException e) {
+                    System.out.println(e.getMessage());
                 } catch (NumberFormatException e) {
                     System.out.println("Erro: Por favor, digite apenas números válidos sem espaços ou letras!");
                 }
@@ -128,6 +134,8 @@ public class View {
                     System.out.println("Adotante cadastrado com sucesso!");
                 } catch (NumberFormatException e) {
                     System.out.println("Erro: Por favor, digite apenas números válidos sem espaços ou letras!");
+                } catch (CPFJaCadastradaException e) {
+                    System.out.println(e.getMessage());
                 }
                 break;
             case 6:
@@ -152,7 +160,10 @@ public class View {
 
                     control.adotarAnimal(cpfAdotanteAdocao, idAnimalAdocao);
                     System.out.println("Animal adotado com sucesso!");
-                } catch (Exception e) {
+                } catch (NumberFormatException e) {
+                    System.out.println("Erro: Por favor, digite apenas números válidos sem espaços ou letras!");
+                }
+                catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
                 break;

@@ -2,7 +2,15 @@ package control;
 
 import java.util.HashMap;
 import java.util.Map;
-import model.*;
+import model.Adotante;
+import model.animal.Animal;
+import model.animal.Cachorro;
+import model.animal.Gato;
+import model.exception.AnimalJaAdotadoException;
+import model.exception.CPFJaCadastradaException;
+import model.funcionarios.Cuidador;
+import model.funcionarios.Funcionario;
+import model.funcionarios.Veterinario;
 
 public class Controller {
     private Map<String, Funcionario> funcionarioMap = new HashMap<>();
@@ -30,19 +38,31 @@ public class Controller {
         }
     }
 
-    public void cadastrarVeterinario(String nome, int idade, String telefone, String CPF, double salario, double beneficios, String crm) {
-        Funcionario v = new Veterinario(nome, idade, telefone, CPF, salario, beneficios, crm);
-        funcionarioMap.put(v.getCPF(), v);
+    public void cadastrarVeterinario(String nome, int idade, String telefone, String CPF, double salario, double beneficios, String crm) throws CPFJaCadastradaException {
+        if (funcionarioMap.containsKey(CPF)) {
+            throw new CPFJaCadastradaException(CPF);
+        } else {
+            Funcionario v = new Veterinario(nome, idade, telefone, CPF, salario, beneficios, crm);
+            funcionarioMap.put(v.getCPF(), v);
+        }
     }
 
-    public void cadastrarCuidador(String nome, int idade, String telefone, String CPF, double salario, double beneficios, String setorResponsavel, String turno) {
-        Funcionario c = new Cuidador(nome, idade, telefone, CPF, salario, beneficios, setorResponsavel, turno);
-        funcionarioMap.put(c.getCPF(), c);
+    public void cadastrarCuidador(String nome, int idade, String telefone, String CPF, double salario, double beneficios, String setorResponsavel, String turno) throws CPFJaCadastradaException {
+        if (funcionarioMap.containsKey(CPF)) {
+            throw new CPFJaCadastradaException(CPF);
+        }else {
+            Funcionario c = new Cuidador(nome, idade, telefone, CPF, salario, beneficios, setorResponsavel, turno);
+            funcionarioMap.put(c.getCPF(), c);
+        }
     }
 
-    public void cadastrarAdotante(String nome, int idade, String telefone, String CPF, String endereco) {
-        Adotante adotante = new Adotante(nome, idade, telefone, CPF, endereco);
-        adotanteMap.put(adotante.getCPF(), adotante);
+    public void cadastrarAdotante(String nome, int idade, String telefone, String CPF, String endereco) throws CPFJaCadastradaException {
+        if (funcionarioMap.containsKey(CPF)) {
+            throw new CPFJaCadastradaException(CPF);
+        }else{
+            Adotante adotante = new Adotante(nome, idade, telefone, CPF, endereco);
+            adotanteMap.put(adotante.getCPF(), adotante);
+        }
     }
 
     public void adotarAnimal(String cpfAdotante, int idAnimal){

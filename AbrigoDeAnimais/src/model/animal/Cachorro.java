@@ -1,21 +1,26 @@
-package model;
+package model.animal;
 
-public class Gato extends Animal {
-    private String porte;
+public class Cachorro extends Animal{
     private double precoKgRacao;
     private double gastosVeterinarios;
+    private String porte;
 
-    public Gato(String nome, int idade, String raca, double peso, double precoKgRacao, double gastosVeterinarios) {
+    public Cachorro(String nome, int idade, String raca, double peso, double gastosVeterinarios, double precoKgRacao) {
         super(nome, idade, raca, peso);
-        this.precoKgRacao = precoKgRacao;
         this.gastosVeterinarios = gastosVeterinarios;
+        this.precoKgRacao = precoKgRacao;
 
-        if (peso < 4.0) {
+        if(peso < 5.0) {
+            this.porte = "Mini";
+        } else if(peso < 10.0) {
             this.porte = "Pequeno";
-        } else if (peso < 6.0) {
+        } else if (peso < 25.0) {
             this.porte = "Médio";
-        } else {
+        } else if (peso < 45.0) {
             this.porte = "Grande";
+        }
+        else {
+            this.porte = "Gigante";
         }
     }
 
@@ -23,19 +28,21 @@ public class Gato extends Animal {
         return porte;
     }
 
-    public double getPrecoKgRacao() {
-        return precoKgRacao;
-    }
-
     public double getGastosVeterinarios() {
         return gastosVeterinarios;
     }
 
+    public double getPrecoKgRacao() {
+        return precoKgRacao;
+    }
+
     public double porcentagemRacaoDiaria() {
         return switch (getPorte()) {
-            case "Pequeno" -> 0.05;
-            case "Médio" -> 0.04;
-            case "Grande" -> 0.03;
+            case "Mini" -> 0.04;
+            case "Pequeno" -> 0.03;
+            case "Médio" -> 0.02;
+            case "Grande" -> 0.015;
+            case "Gigante" -> 0.01;
             default -> 0.0;
         };
     }
@@ -50,7 +57,7 @@ public class Gato extends Animal {
     }
     @Override
     public double calcularCustoMensal() {
-        double custoRacao = (calcularRacaoDiaria() * 30) * precoKgRacao;
-        return custoRacao + gastosVeterinarios;
+       double custoRacao = (calcularRacaoDiaria() * 30) * precoKgRacao;
+       return custoRacao + gastosVeterinarios;
     }
 }

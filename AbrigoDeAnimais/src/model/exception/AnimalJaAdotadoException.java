@@ -1,4 +1,4 @@
-package model;
+package model.exception;
 
 public class AnimalJaAdotadoException extends RuntimeException {
     public AnimalJaAdotadoException(String nome) {
