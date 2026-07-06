@@ -22,3 +22,6 @@ Os requisitos funcionais descrevem as ações e comportamentos que o sistema dev
 * **RF04 - Emitir Relatórios e Consultas:** O sistema deve ser capaz de listar de forma filtrada todos os animais do abrigo, animais especificamente disponíveis, tipos de funcionários (veterinários ou cuidadores), adotantes, e permitir a busca individualizada de um animal por meio do seu ID único.
 * **RF05 - Gerar Relatório Financeiro (Custo Mensal):** O sistema deve calcular de forma automatizada e polimórfica o custo mensal total do abrigo, somando os salários e benefícios dos funcionários com os custos individuais de alimentação (quilos de ração consumidos) e despesas veterinárias de cada animal resgatado.
 
+## 3. Diagrama de caso de uso
+
+![Diagrama de caso de uso] (imgs/diagrama1.jpeg)
