@@ -70,13 +70,20 @@ Bem-vindo ao sistema do abrigo de animais!
 Pressione enter para continuar. 
 
 Menu:
-1. Cadastrar Cachorro        2. Cadastrar Gato
-3. Cadastrar Veterinário     4. Cadastrar Cuidador
-5. Cadastrar Adotante        6. Adicionar vacina a um animal
-7. Adotar animal             8. Listar animais
-9. Listar funcionários       10. Listar Veterinários
-11. Listar Cuidadores        12. Listar Adotantes
-13. Listar Cachorros         14. Listar Gatos
+1. Cadastrar Cachorro
+2. Cadastrar Gato
+3. Cadastrar Veterinário
+4. Cadastrar Cuidador
+5. Cadastrar Adotante
+6. Adicionar vacina a um animal
+7. Adotar animal
+8. Listar animais
+9. Listar funcionários
+10. Listar Veterinários
+11. Listar Cuidadores
+12. Listar Adotantes
+13. Listar Cachorros
+14. Listar Gatos
 15. Listar Animais Disponíveis para Adoção
 16. Procurar animal por ID
 0. Sair
